@@ -13,19 +13,23 @@ class DiscountButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    
+    final screenWidth = MediaQuery.of(context).size.width;
+    final screenHeight = MediaQuery.of(context).size.height;
+
+   
+    final double fontSize = screenWidth * 0.042; 
+    final double verticalPadding = screenHeight * 0.018;
+    final double horizontalPadding = screenWidth * 0.08;
+
     return ClipRRect(
-      borderRadius: BorderRadius.circular(30), // même forme qu’avant
+      borderRadius: BorderRadius.circular(30),
       child: BackdropFilter(
-        filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10), // flou plus fort
+        filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
         child: Container(
           width: double.infinity,
           decoration: BoxDecoration(
-            color: const Color.fromARGB(
-              82,
-              255,
-              255,
-              255,
-            ).withOpacity(0.35), // transparent clair
+            color: const Color.fromARGB(82, 255, 255, 255).withOpacity(0.35),
             borderRadius: BorderRadius.circular(30),
             border: Border.all(
               color: const Color.fromARGB(93, 255, 255, 255).withOpacity(0.1),
@@ -34,9 +38,12 @@ class DiscountButton extends StatelessWidget {
           child: TextButton(
             onPressed: onPressed,
             style: TextButton.styleFrom(
-              padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 15),
+              padding: EdgeInsets.symmetric(
+                horizontal: horizontalPadding,
+                vertical: verticalPadding,
+              ),
               foregroundColor: Colors.white,
-              textStyle: const TextStyle(fontSize: 16),
+              textStyle: TextStyle(fontSize: fontSize),
             ),
             child: Text(text),
           ),
