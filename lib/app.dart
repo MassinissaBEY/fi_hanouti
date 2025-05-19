@@ -1,9 +1,6 @@
-import 'package:fi_hanouti/features/discounts/presentation/pages/bonus_discount.dart';
-import 'package:fi_hanouti/features/discounts/presentation/pages/loyalty_discount.dart';
+import 'package:fi_hanouti/features/discounts/presentation/pages/welcomepage.dart';
 import 'package:flutter/material.dart';
 import 'features/discounts/presentation/pages/discount_main_page.dart';
-import 'features/discounts/presentation/pages/discount_info_page.dart';
-import 'features/discounts/presentation/pages/caroussel/car.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -16,11 +13,10 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(primarySwatch: Colors.blue),
       initialRoute: '/',
       routes: {
-        '/': (context) => const DiscountMainPage(),
-        '/discount-info': (context) => const DiscountInfoPage(),
-        '/regular-carousel': (context) => CarrouselPage(),
-        '/bonus-discount': (context) => const BonusDiscountPage(),
-        '/loyalty-discount': (context) => const LoyaltyDiscountPage(),
+        '/': (context) => WelcomePage(),
+        // '/': (context) => const DiscountMainPage(),
+        // '/bonus-discount': (context) => const BonusDiscountPage(),
+        // '/loyalty-discount': (context) => const LoyaltyDiscountPage(),
       },
     );
   }

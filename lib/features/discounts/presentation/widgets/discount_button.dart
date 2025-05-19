@@ -1,5 +1,6 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class DiscountButton extends StatelessWidget {
   final String text;
@@ -13,39 +14,38 @@ class DiscountButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    
-    final screenWidth = MediaQuery.of(context).size.width;
-    final screenHeight = MediaQuery.of(context).size.height;
-
-   
-    final double fontSize = screenWidth * 0.042; 
-    final double verticalPadding = screenHeight * 0.018;
-    final double horizontalPadding = screenWidth * 0.08;
+    final double buttonWidth = 335.w;
+    final double buttonHeight = 54.h;
 
     return ClipRRect(
-      borderRadius: BorderRadius.circular(30),
+      borderRadius: BorderRadius.circular(26.r),
       child: BackdropFilter(
         filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
         child: Container(
-          width: double.infinity,
+          width: buttonWidth,
+          height: buttonHeight,
           decoration: BoxDecoration(
-            color: const Color.fromARGB(82, 255, 255, 255).withOpacity(0.35),
-            borderRadius: BorderRadius.circular(30),
+            color: const Color(0x33FFFFFF), 
+            borderRadius: BorderRadius.circular(30.r),
             border: Border.all(
-              color: const Color.fromARGB(93, 255, 255, 255).withOpacity(0.1),
+              color: const Color(0x19FFFFFF), 
             ),
           ),
           child: TextButton(
             onPressed: onPressed,
             style: TextButton.styleFrom(
-              padding: EdgeInsets.symmetric(
-                horizontal: horizontalPadding,
-                vertical: verticalPadding,
-              ),
+              padding: EdgeInsets.zero,
               foregroundColor: Colors.white,
-              textStyle: TextStyle(fontSize: fontSize),
+              textStyle: TextStyle(
+                fontFamily: 'Poppins',
+                fontWeight: FontWeight.w500,
+                fontSize: 16.sp,
+                height: 1.75, 
+                letterSpacing: 0,
+              
+              ),
             ),
-            child: Text(text),
+            child: Center(child: Text(text)),
           ),
         ),
       ),
