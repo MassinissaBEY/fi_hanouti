@@ -213,6 +213,7 @@ Future<void> showCustomDiscountDialog({
                                 if (currentIndex != 0 &&
                                     currentIndex != steps.length - 1)
                                   AppButton(
+      
                                     text: 'Back',
                                     onPressed: () {
                                       setState(() {
