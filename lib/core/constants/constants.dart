@@ -73,3 +73,9 @@ final List<Map<String, String>> bonusStepsList = [
         'When you order 5 times from any restaurant on FelHanout app, you’ll get a discount on the fifth. Track your progress and rewards on the home page.',
   },
 ];
+
+final List<Map<String, dynamic>> menuList = [
+  {'title': 'How do I get discounts?', 'contect': fullStepsList},
+  {'title': 'How do I get loyalty discounts?', 'contect': loyaltyStepsList},
+  {'title': 'How do I get a bonus discount?', 'contect': bonusStepsList},
+];

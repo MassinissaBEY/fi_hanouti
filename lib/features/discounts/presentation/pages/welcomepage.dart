@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'discount_main_page.dart';
+import 'menu_page.dart';
 
 class WelcomePage extends StatelessWidget {
   const WelcomePage({super.key});

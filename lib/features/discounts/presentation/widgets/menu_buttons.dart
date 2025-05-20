@@ -25,27 +25,19 @@ class DiscountButton extends StatelessWidget {
           width: buttonWidth,
           height: buttonHeight,
           decoration: BoxDecoration(
-            color: const Color(0x33FFFFFF), 
-            borderRadius: BorderRadius.circular(30.r),
-            border: Border.all(
-              color: const Color(0x19FFFFFF), 
-            ),
+            color: const Color(0x33FFFFFF),
+            borderRadius: BorderRadius.circular(26.r),
+            border: Border.all(color: const Color(0x19FFFFFF)),
           ),
           child: TextButton(
             onPressed: onPressed,
             style: TextButton.styleFrom(
               padding: EdgeInsets.zero,
               foregroundColor: Colors.white,
-              textStyle: TextStyle(
-                fontFamily: 'Poppins',
-                fontWeight: FontWeight.w500,
-                fontSize: 16.sp,
-                height: 1.75, 
-                letterSpacing: 0,
-              
-              ),
             ),
-            child: Center(child: Text(text)),
+            child: Row(
+              children: [SizedBox(width: 26.w), Text(text)],
+            ),
           ),
         ),
       ),
